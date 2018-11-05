@@ -17,7 +17,7 @@ def syst(z):
     F = empty((5))
     F[0] = h*(Ts-T) + h*(Tp-T) - P
     F[1] = Fp + P - Fd - Fi
-    F[2] = 2*(Ts-T) + Fs - Fd - Fp
+    F[2] = h*(Ts-T) + Fs - Fd - Fp
     F[3] = g*(Tp**4) - Fp
     F[4] = g*(Ts**4) - Fs
     return F
