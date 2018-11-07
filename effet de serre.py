@@ -36,7 +36,7 @@ print("P/m^2 = " + str(Pm) + "(J/s)/m^2")
 
 
 
-Q = float(input("Flux d'air(m^3/s) = "))
+Q = float(input("Flux d'air(Kg/s) = "))
 C = float(input("chaleur massique (J/(Kg * K)) = "))
 dT = float(input("dT (K) = "))
 
