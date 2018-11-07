@@ -1,13 +1,17 @@
 from numpy import *
 from scipy.optimize import *
-
+from math import sqrt
 
 #inputs:
 T = float(input("T (K)= "))
 Fd = float(input("Fd (W/m^2)= "))
 Fi = float(input("Fi (W/m^2)= "))
+#Fi = (Fd*T) - 5.2
 g = 5.67 * (10**(-8))
 h = 4
+
+
+
 def syst(z):
     P = z[0]
     Ts = z[1]
@@ -23,4 +27,20 @@ def syst(z):
     return F
 zGuess = array([1,1,1,1,1])
 z = fsolve(syst,zGuess)
-print(z)
+Pm = int(z[0])
+print("P/m^2 = " + str(Pm) + "(J/s)/m^2")
+
+
+
+Q = float(input("Flux d'air(m^3/s) = "))
+C = float(input("chaleur massique (J/(Kg * K)) = "))
+dT = float(input("dT (K) = "))
+
+
+#Pout = float(input("Pout(J/s) ="))
+Pout = Q * C * dT
+
+
+l = sqrt(Pout/(2*Pm))
+L = l/2
+print (l,L)
