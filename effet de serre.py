@@ -11,7 +11,7 @@ g = 5.67 * (10**(-8))
 h = 4
 
 
-
+#systeme d'equation non linéaires
 def syst(z):
     P = z[0]
     Ts = z[1]
@@ -27,6 +27,9 @@ def syst(z):
     return F
 zGuess = array([1,1,1,1,1])
 z = fsolve(syst,zGuess)
+
+#Pm est la puissance par metre carré
+
 Pm = int(z[0])
 print("P/m^2 = " + str(Pm) + "(J/s)/m^2")
 
@@ -40,7 +43,7 @@ dT = float(input("dT (K) = "))
 #Pout = float(input("Pout(J/s) ="))
 Pout = Q * C * dT
 
-
+#l et L sont les dimensions en metre
 l = sqrt(Pout/(2*Pm))
 L = l/2
 print (l,L)
