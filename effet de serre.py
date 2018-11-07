@@ -43,7 +43,7 @@ dT = float(input("dT (K) = "))
 #Pout = float(input("Pout(J/s) ="))
 Pout = Q * C * dT
 
-#l et L sont les dimensions en metre
+#l et L sont les dimensions en metre, l est le coté avec les ventilateurs, 2 fois plus grand que la Largeur
 l = sqrt(Pout/(2*Pm))
 L = l/2
 print (l,L)
